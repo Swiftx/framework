@@ -6,7 +6,4 @@ dependencyResolutionManagement {
     }
 }
 
-['rest', 'problem', 'storage', 'orm'].each { module ->
-    include "framework-${module}"
-    project(":framework-${module}").projectDir = file(module)
-}
+include 'dependencies', 'rest', 'problem', 'storage', 'orm'

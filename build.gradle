@@ -10,12 +10,16 @@ allprojects {
 }
 
 def springBootBom = libs.spring.boot.bom
+def frameworkLibraries = [
+    project(':rest'),
+    project(':problem'),
+    project(':storage')
+]
 
-configure([project(':framework-rest'), project(':framework-problem'), project(':framework-storage')]) {
+configure(frameworkLibraries) {
     apply plugin: 'java-library'
     apply plugin: 'jacoco'
     apply plugin: 'io.github.malczuuu.nullmarked'
-    apply plugin: 'com.vanniktech.maven.publish'
 
     java {
         toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -66,6 +70,22 @@ configure([project(':framework-rest'), project(':framework-problem'), project(':
             into 'META-INF'
         }
     }
+}
+
+project(':dependencies') {
+    apply plugin: 'java-platform'
+
+    dependencies {
+        constraints {
+            frameworkLibraries.each { library ->
+                api(project.dependencies.project(library.path))
+            }
+        }
+    }
+}
+
+configure(frameworkLibraries + project(':dependencies')) {
+    apply plugin: 'com.vanniktech.maven.publish'
 
     mavenPublishing {
         publishToMavenCentral()
