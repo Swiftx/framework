@@ -1,0 +1,15 @@
+mavenPublishing.pom {
+    description = 'Markdown documentation and type URI resolution for Spring Problem Details'
+}
+
+dependencies {
+    api 'org.springframework:spring-web'
+    implementation libs.commonmark.asProvider()
+    implementation libs.commonmark.tables
+    implementation libs.commonmark.frontmatter
+    implementation libs.bootstrap
+    compileOnly 'org.springframework:spring-webmvc'
+    compileOnly 'org.springframework:spring-webflux'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+}

@@ -1,0 +1,17 @@
+[versions]
+spring-boot = "4.1.0"
+swagger = "2.2.52"
+commonmark = "0.29.0"
+bootstrap = "5.3.8"
+
+[libraries]
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+swagger = { module = "io.swagger.core.v3:swagger-annotations-jakarta", version.ref = "swagger" }
+commonmark = { module = "org.commonmark:commonmark", version.ref = "commonmark" }
+commonmark-tables = { module = "org.commonmark:commonmark-ext-gfm-tables", version.ref = "commonmark" }
+commonmark-frontmatter = { module = "org.commonmark:commonmark-ext-yaml-front-matter", version.ref = "commonmark" }
+bootstrap = { module = "org.webjars:bootstrap", version.ref = "bootstrap" }
+
+[plugins]
+maven-publish = { id = "com.vanniktech.maven.publish", version = "0.37.0" }
+nullmarked = { id = "io.github.malczuuu.nullmarked", version = "0.6.0" }

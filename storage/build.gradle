@@ -1,0 +1,3 @@
+mavenPublishing.pom {
+    description = 'Object storage contracts and bucket annotations'
+}
