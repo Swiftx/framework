@@ -1,3 +1,6 @@
-mavenPublishing.pom {
-    description = 'Object storage contracts and bucket annotations'
+plugins {
+    id 'swiftx.java-library'
+    id 'swiftx.publishing'
 }
+
+description = 'Object storage contracts and bucket annotations'

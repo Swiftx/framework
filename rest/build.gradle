@@ -1,6 +1,9 @@
-mavenPublishing.pom {
-    description = 'Spring MVC and WebFlux error responses, pagination and request handling'
+plugins {
+    id 'swiftx.java-library'
+    id 'swiftx.publishing'
 }
+
+description = 'Spring MVC and WebFlux error responses, pagination and request handling'
 
 dependencies {
     api 'org.springframework:spring-web'

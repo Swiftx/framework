@@ -1,9 +1,14 @@
+
 rootProject.name = 'framework'
+
+include(':dependencies')
+include(':rest')
+include(':problem')
+include(':storage')
+include(':orm')
 
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
     }
 }
-
-include 'dependencies', 'rest', 'problem', 'storage', 'orm'

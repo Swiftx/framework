@@ -12,6 +12,5 @@ commonmark-tables = { module = "org.commonmark:commonmark-ext-gfm-tables", versi
 commonmark-frontmatter = { module = "org.commonmark:commonmark-ext-yaml-front-matter", version.ref = "commonmark" }
 bootstrap = { module = "org.webjars:bootstrap", version.ref = "bootstrap" }
 
-[plugins]
-maven-publish = { id = "com.vanniktech.maven.publish", version = "0.37.0" }
-nullmarked = { id = "io.github.malczuuu.nullmarked", version = "0.6.0" }
+maven-publish-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version = "0.37.0" }
+nullmarked-plugin = { module = "io.github.malczuuu:nullmarked-gradle-plugin", version = "0.6.0" }

@@ -1,3 +1,14 @@
-mavenPublishing.pom {
-    description = 'Bill of materials for Swiftx Framework libraries'
+plugins {
+    id 'java-platform'
+    id 'swiftx.publishing'
+}
+
+description = 'Bill of materials for Swiftx Framework libraries'
+
+dependencies {
+    constraints {
+        api project(':rest')
+        api project(':problem')
+        api project(':storage')
+    }
 }

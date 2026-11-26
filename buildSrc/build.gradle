@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+dependencies {
+    implementation localGroovy()
+    implementation libs.maven.publish.plugin
+    implementation libs.nullmarked.plugin
+}
+
+gradlePlugin {
+    plugins {
+        register('javaLibrary') {
+            id = 'swiftx.java-library'
+            implementationClass = 'top.swiftx.framework.gradle.JavaLibraryConventionPlugin'
+        }
+        register('publishingConvention') {
+            id = 'swiftx.publishing'
+            implementationClass = 'top.swiftx.framework.gradle.PublishingConventionPlugin'
+        }
+    }
+}

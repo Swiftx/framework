@@ -1,6 +1,9 @@
-mavenPublishing.pom {
-    description = 'Markdown documentation and type URI resolution for Spring Problem Details'
+plugins {
+    id 'swiftx.java-library'
+    id 'swiftx.publishing'
 }
+
+description = 'Markdown documentation and type URI resolution for Spring Problem Details'
 
 dependencies {
     api 'org.springframework:spring-web'
